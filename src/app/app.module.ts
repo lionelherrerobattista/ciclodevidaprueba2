@@ -8,6 +8,10 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './componentes/home/home.component';
+import { AdminComponent } from './pages/input/admin/admin.component';
+import { DetalleAlumnosComponent } from './pages/input/detalle-alumnos/detalle-alumnos.component';
+import { ListadoAlumnosComponent } from './pages/input/listado-alumnos/listado-alumnos.component';
+import { FormAlumnoComponent } from './pages/input/form-alumno/form-alumno.component';
 
 
 @NgModule({
@@ -17,12 +21,16 @@ import { HomeComponent } from './componentes/home/home.component';
     LoginComponent,
     ErrorComponent,
     HomeComponent,
+    AdminComponent,
+    DetalleAlumnosComponent,
+    ListadoAlumnosComponent,
+    FormAlumnoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

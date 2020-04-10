@@ -20,9 +20,8 @@ html, body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background-color:rgb(235, 233, 233);
-    height: 50vh;
+    height: 40vh;
     width: 25vw;
     padding: 5vh 5vw;
     border-radius: 10px;
@@ -33,7 +32,16 @@ input
 {
     border-radius: 8px;
     height: 5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-bottom: 5vh;
     border: none;
+}
+
+label
+{
+    margin-bottom: 1vh;
+    font-size: 1.2vw;
 }
 
 button

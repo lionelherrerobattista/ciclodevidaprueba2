@@ -3,11 +3,11 @@
     <div class='login'>
 
         <label for='email'>Email:</label>
-        <input type="text" [(ngModel)]="usuario.email" id='email'>
+        <input type="text" placeholder="email" [(ngModel)]="usuario.email" name='email'>
 
 
         <label for='pass'>Password:</label>
-        <input type="text" [(ngModel)]="usuario.pass" id='pass'> 
+        <input type="text" placeholder="password" [(ngModel)]="usuario.pass" name='pass'> 
         
         <button (click)="Ingresar () ">Ingresar</button>   
     </div>    

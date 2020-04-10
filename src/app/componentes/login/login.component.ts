@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
   name: string;
 
   // creo un objeto
@@ -27,17 +27,17 @@ export class LoginComponent implements OnInit {
 
     //Esto que sigue va en la clase:
     if(this.usuario.email == 'admin@mail.com' &&
-      this.usuario.pass == '1234') 
+      this.usuario.pass == '1234')
     {
       //tiene  que llevar a home
-      this.route.navigate(['home']); //nombre tiene que ser igual al del path
+      this.route.navigate(['admin']); //nombre tiene que ser igual al del path
     }
     else
     {
       //tiene que llevar a error
       this.route.navigate(['error']);
     }
-      
+
   }
 
 }
