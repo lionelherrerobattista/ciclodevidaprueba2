@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Alumno } from '../../../clases/alumno';
 import { Producto } from '../../../clases/producto';
-// import { Profesor } from './clases/profesor';
 
 @Component({
   selector: 'app-admin',
@@ -11,35 +9,20 @@ import { Producto } from '../../../clases/producto';
 
 export class AdminComponent {
 
-  title = 'Registro de alumnos';
+  title = 'Registro de productos';
 
-  //Alumnos
-  listadoPrincipal: Alumno[];
-  alumnoSeleccionado:Alumno;
   listaProductos:Producto[];
   productoSeleccionado:Producto;
 
-
   constructor() {
 
-    this.listadoPrincipal = [
-      { apellido: 'Aguas' ,nombre:"rogelio",legajo: 666 },
-      { apellido: 'Mercurio' ,nombre:"Alfredo",legajo: 333 }
-    ];
-
     this.listaProductos = [
-      { id: 1, descripcion: "arroz", tipo:"solido", fechaDeVencimiento:'16/4/2020', precio:45, rutaDeFoto:''},
-      { id: 1, descripcion: "arroz", tipo:"solido", fechaDeVencimiento:'16/4/2020', precio:45, rutaDeFoto:''}
+      { id: 1, descripcion: "arroz", tipo:"solido", fechaDeVencimiento:'16/4/2021', precio:45, rutaDeFoto:''},
+      { id: 2, descripcion: "bife", tipo:"solido", fechaDeVencimiento:'20/4/2020', precio:180, rutaDeFoto:''}
     ];
 
   }
 
-  //Tomar el alumno enviado desde el componente form-alumno:
-  tomarAlumnoCreado(NuevoAlumno: Alumno)
-  {
-    // Guardar en la lista principal:
-    this.listadoPrincipal.push(NuevoAlumno);
-  }
 
   tomarProductoCreado(NuevoProducto: Producto)
   {
@@ -47,16 +30,26 @@ export class AdminComponent {
     this.listaProductos.push(NuevoProducto);
   }
 
-  //Tomar el alumno enviado desde el componente detalle-alumno:
-  tomarAlumnoParaDetalles(NuevoAlumno: Alumno)
-  {
-    this.alumnoSeleccionado=NuevoAlumno;
-  }
-
   //Tomar el producto enviado desde el componente detalle-producto:
   tomarProductoParaDetalles(NuevoProducto: Producto)
   {
     this.productoSeleccionado=NuevoProducto;
+  }
+
+  tomarProductoParaBorrar(productoParaBorrar: Producto)
+  {
+    let indiceArray;
+
+    this.listaProductos.forEach(function (producto, indice) {
+      if(producto.id == productoParaBorrar.id)
+      {
+        console.info(indice);
+        indiceArray = indice;
+      }
+    });
+
+    this.listaProductos.splice(indiceArray, 1);
+
   }
 
 }

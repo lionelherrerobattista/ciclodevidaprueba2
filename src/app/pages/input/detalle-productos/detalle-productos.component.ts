@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Producto} from '../../../clases/producto';
 
 @Component({
@@ -9,15 +9,19 @@ import {Producto} from '../../../clases/producto';
 export class DetalleProductosComponent implements OnInit {
 
   @Input() productoParaMostrar: Producto;
+  @Output() productoParaBorrar: EventEmitter<any>= new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  borrarProducto(producto:Producto)
+  borrarProducto()
   {
-
+    console.info("borrarProducto");
+    //Emito el evento borrarProducto
+    //con el Producto que recibo del detalle:
+    this.productoParaBorrar.emit(this.productoParaMostrar);
   }
 
 }
