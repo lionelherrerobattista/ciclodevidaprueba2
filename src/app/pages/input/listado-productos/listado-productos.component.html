@@ -1,0 +1,24 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>descripcion</th>
+      <th>tipo</th>
+      <th>fechaDeVencimiento</th>
+      <th>precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of listadoProductos">
+      <td>{{producto.id}}</td>
+      <td>{{producto.descripcion}}</td>
+      <td>{{producto.tipo}}</td>
+      <td>{{producto.fechaDeVencimiento}}</td>
+      <td>{{producto.precio}}</td>
+      <td><button type="button" class="btn btn-info btn-circle"   (click)="mostrarDetalles(producto)"><i class="fa fa-check"></i>
+      </button></td>
+    </tr>
+
+  </tbody>
+</table>

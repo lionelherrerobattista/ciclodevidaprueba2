@@ -1,0 +1,18 @@
+<div *ngIf="!productoParaMostrar">
+  <p> Seleccione un producto </p>
+</div>
+
+
+<div *ngIf="productoParaMostrar">
+  <h2>{{productoParaMostrar.descripcion}} </h2>
+
+
+  <div class="card" style="width:200px">
+      <img class="card-img-top" src="/assets/imagenes/presentacion.jpg" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">{{productoParaMostrar.id}}</h4>
+        <p class="card-text">El producto {{productoParaMostrar.descripcion}}, {{productoParaMostrar.tipo}}</p>
+        <button (click)="borrarProducto(productoParaMostrar)" class="btn btn-danger">Borrar</button>
+      </div>
+    </div>
+</div>
