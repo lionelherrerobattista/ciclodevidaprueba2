@@ -12,6 +12,8 @@ import { AdminComponent } from './pages/input/admin/admin.component';
 import { DetalleAlumnosComponent } from './pages/input/detalle-alumnos/detalle-alumnos.component';
 import { ListadoAlumnosComponent } from './pages/input/listado-alumnos/listado-alumnos.component';
 import { FormAlumnoComponent } from './pages/input/form-alumno/form-alumno.component';
+import { PaisesservicioService } from './servicios/paisesservicio.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,9 +32,11 @@ import { FormAlumnoComponent } from './pages/input/form-alumno/form-alumno.compo
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
+
 
   ],
-  providers: [],
+  providers: [PaisesservicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
